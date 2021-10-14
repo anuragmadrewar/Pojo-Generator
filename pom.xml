@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>POJOGeneration</groupId>
+	<artifactId>POJOGeneration</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+
+		<jdk.version>1.8</jdk.version>
+
+		<json-lib>2.4</json-lib>
+		<struts.version>2.3.24.1</struts.version>
+
+		<mysql.version>5.1.37</mysql.version>
+
+		<hibernate-core.version>5.0.3.Final</hibernate-core.version>
+		<hibernate-c3p0.version>5.0.3.Final</hibernate-c3p0.version>
+		<hibernate-validator.version>5.2.2.Final</hibernate-validator.version>
+
+		<commons-logging.version>1.2</commons-logging.version>
+		<log4j.version>1.7.7</log4j.version>
+
+		<mail.version>1.4.7</mail.version>
+
+		<opencsv.version>2.3</opencsv.version>
+		<itext.version>4.2.2</itext.version>
+		<javacsv.version>2.0</javacsv.version>
+		<poi-ooxml.version>3.12</poi-ooxml.version>
+
+
+		<jersey-container-servlet.version>2.21</jersey-container-servlet.version>
+		<jersey-media-multipart.version>2.22</jersey-media-multipart.version>
+		<jersey-media-moxy.version>2.21</jersey-media-moxy.version>
+
+		<quartz-schedular.version>2.2.1</quartz-schedular.version>
+
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>JBoss repository</id>
+			<url>http://repository.jboss.com/maven2/</url>
+		</repository>
+		<repository>
+			<id>snapshot-repository.java.net</id>
+			<name>Java.net Snapshot Repository for Maven</name>
+			<url>https://maven.java.net/content/repositories/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<!-- MySQL database driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
